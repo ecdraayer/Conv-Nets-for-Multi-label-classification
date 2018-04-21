@@ -10,7 +10,7 @@ All the images in train-jpg folder were used to train the models. The images in 
 
 # Machine Used:
  The group has executed this program on Digital Ocean droplets with the following configurations<br />
- 64GB RAM, 32 vCPUs, 400GB SSD Disk<br />
+ Ubuntu 16.04, 64GB RAM, 32 vCPUs, 400GB SSD Disk<br />
  
 
 # How To Run:
@@ -41,6 +41,21 @@ All the images in train-jpg folder were used to train the models. The images in 
   -termcolor-1.1.0<br />
   -werkzeug-0.14.1<br />
  
+We have used these commands to install the above requirements:
+```
+git clone https://github.com/kira0992/Rainforest-classification.git
+apt-get update
+apt-get -y install python3-pip
+pip3 install numpy
+pip3 install pandas
+sudo apt-get install python-opencv
+pip3 install opencv-python
+pip3 install sklearn
+pip3 install scipy
+pip3 install keras
+pip3 install tensorflow
+pip3 install h5py
+```
 
 3. Run files:<br />
   -`python3 Amazon.py` to get Baseline model predictions<br />
@@ -50,3 +65,13 @@ All the images in train-jpg folder were used to train the models. The images in 
   
 Use the csv file created by running these commands in this [kaggle website](https://www.kaggle.com/c/planet-understanding-the-amazon-from-space/leaderboard) under late submissions to get the accuracy of the model.
 Note: All the python files make submission_keras.csv file which needs to be submitted to the above Kaggle link.
+
+If you get a MemoryError or are using a machine with low RAM or want to get results quickly then change the line
+
+`for v in training_data['tags'].values:`
+
+to 
+
+`for v in training_data['tags'].values[:18000]:`
+
+You can put the number of training images you want to use in place of `18000`. This will give you results quickly but the model will be less accurate.
