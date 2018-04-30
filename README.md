@@ -43,7 +43,7 @@ All the images in train-jpg folder were used to train the models. The images in 
  
 We have used these commands to install the above requirements:
 ```
-git clone https://github.com/kira0992/Rainforest-classification.git
+git clone https://github.com/kira0992/Conv-Nets-for-Multi-label-classification.git
 apt-get update
 apt-get -y install python3-pip
 pip3 install numpy
